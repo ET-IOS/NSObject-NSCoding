@@ -10,12 +10,18 @@
 
 
 @interface Archiver : NSObject {
-
+    
 }
 
-+ (id)retrieve:(NSString *)key;
-+ (BOOL)persist:(id)object key:(NSString *)key;
-+ (BOOL)delete:(NSString *)key;
++ (id)readFile:(NSString *)aFileName;
++ (id)readFileFromGivenPath:(NSString *)filePath;
++ (NSDate*)createdOn:(NSString *)aFileName;
++ (BOOL)fileExists:(NSString *)aFileName;
++ (BOOL)createFileAtGivenPath:(id)object aFilePath:(NSString *)aFilePath;
++ (BOOL)createFile:(id)object aFileName:(NSString *)aFileName;
++ (NSString *)createFileWithData:(id)object aFileName:(NSString *)aFileName;
++ (BOOL)deleteFile:(NSString *)aFileName;
 + (BOOL)deleteEverything;
++ (NSString*)getFilePath:(NSString *)aFileName;
 
 @end
